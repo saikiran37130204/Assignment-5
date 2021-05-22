@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PersonsProfileMVC.Models.PersonsProfile>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isEmployed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.noticePeriod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.currentCTC)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isEmployed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.noticePeriod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.currentCTC)
+            </td>
+            <td>
+                
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
